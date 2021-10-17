@@ -1,38 +1,85 @@
 .App {
+  min-height: 100vh;
+  background: rgb(40, 40, 208);
+}
+
+.container {
+  width: 1000px;
+  margin: 0 auto;
+  padding-top: 200px;
+}
+
+.generator {
+  background: rgb(40, 40, 208);
+  padding: 30px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.generator__header {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 50px;
+  font-size: 40px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.generator__password {
+  /* position: relative; */
+  background: rgba(0, 0, 0, 0.4);
+  padding: 13px 10px;
+  color: #fff;
+  height: 46px;
+  margin-bottom: 30px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.copy__btn {
+  /* position: absolute; */
+  background: #166beb;
+  color: #fff;
+  border: none;
+  /* border-radius: 10px; */
+
+  /* height: 30px; */
+  padding: 5px 8px;
+  cursor: pointer;
+  text-align: center;
+  /* top: 3px;
+  right: 3px; */
+}
+
+.generator__btn {
+  background: #166beb;
+
+  border: none;
+  display: block;
+  width: 60%;
+  padding: 10px;
+  color: #fff;
+  font-size: 17px;
+  cursor: pointer;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+.wraperForm-group {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-evenly;
+  margin-top: 30px;
 }
 
-.App-link {
-  color: #61dafb;
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  margin-bottom: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.range {
+  width: 200px;
+  margin-left: 10px;
+}
+
+.options {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  margin-top: 3px;
 }
