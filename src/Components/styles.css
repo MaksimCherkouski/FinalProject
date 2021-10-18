@@ -1,0 +1,127 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  background-color: rgb(124, 116, 116);
+}
+
+.title {
+  text-align: center;
+  margin-top: 50px;
+  color: rgb(185, 223, 245);
+}
+.container {
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 60%;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background-color: rgb(185, 223, 245);
+}
+
+.form {
+  background-color: transparent;
+  margin: 0 auto;
+}
+
+.formSection {
+  margin-top: 40px;
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+  background-color: transparent;
+}
+
+.label {
+  width: 40%;
+  font-size: 20px;
+  margin-top: 6px;
+  background-color: transparent;
+  color: rgb(80, 76, 76);
+}
+
+.radioLabel {
+  margin-left: 20px;
+  margin-top: 4px;
+}
+
+.input {
+  width: 60%;
+  padding: 7px;
+  border: none;
+  border: 1px solid gray;
+  border-radius: 5px;
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0.15);
+  color: rgb(63, 62, 62);
+}
+
+.radioInput {
+  /* margin-top: 5px; */
+  width: 30px;
+  height: 30px;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.date {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  background-color: transparent;
+}
+
+.age {
+  width: 25%;
+  text-align: center;
+}
+
+.centerBut {
+  width: 30%;
+  margin: 0 auto;
+  margin-top: 60px;
+  background-color: transparent;
+}
+
+.nextBut {
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: none;
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin-bottom: 40px;
+  color: rgb(63, 62, 62);
+  /* display: none; */
+}
+.hide {
+  display: none;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  background-color: transparent;
+}
+
+.checkBoxGroup {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  background-color: transparent;
+}
+
+.inputCheckBox {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.labelCheckBox {
+  background-color: transparent;
+  color: rgb(80, 76, 76);
+}
