@@ -12,10 +12,29 @@ export function Education() {
     const [russian, setRussian] = useState(false);
     const [english, setEnglish] = useState(false);
     const [german, setGerman] = useState(false);
+    // const [language, setLanguage] = useState('');
 
+
+
+    function checkEducation(str) {
+        if (str === 'secondary') { return 'Среднее' }
+        if (str === 'secondary_special') { return 'Среднее специальное' }
+        if (str === 'higher') { return 'Высшее' }
+    }
+    // function checkLanguage() {
+    //     let res = '';
+    //     if (russian) { res += 'Русский, ' }
+    //     if (english) { res += 'Английский, ' }
+    //     if (german) { res += 'Немецкий, ' }
+    //     return res.substring(0, res.length - 2)
+    // }
 
     const handleChangeState = () => {
         if (checkFilling) {
+
+            // console.log(checkLanguage())
+            // setLanguage(checkLanguage())
+            // console.log(language)
 
             sessionStorage.setItem('step2', JSON.stringify({
                 education,
@@ -36,6 +55,10 @@ export function Education() {
         checkFilling()
     }
 
+    // const handleChangeLanguage = () => {
+    //     setLanguage(checkLanguage())
+
+    // }
 
 
     function checkFilling() {
@@ -52,16 +75,16 @@ export function Education() {
             <div className="container">
                 <form className="form">
 
-                    <div className="formSection" onChange={(e) => { setEducation(e.target.value) }} value={education}>
+                    <div className="formSection" onChange={(e) => { setEducation(checkEducation(e.target.value)) }} value={education}>
 
-                        <input className="radioInput" id="ed1" type="radio" name="education" value="secondary" checked />
-                        <label className="label radioLabel" for="ed1">Среднее</label>
+                        <input className="radioInput" id="ed1" type="radio" name="education" value="secondary" defaultChecked />
+                        <label className="label radioLabel" htmlFor="ed1">Среднее</label>
 
                         <input className="radioInput" id="ed2" type="radio" name="education" value="secondary_special" />
-                        <label className="label radioLabel" for="ed2">Среднее специальное</label>
+                        <label className="label radioLabel" htmlFor="ed2">Среднее специальное</label>
 
                         <input className="radioInput" id="ed3" type="radio" name="education" value="higher" />
-                        <label className="label radioLabel" for="ed3">Высшее</label>
+                        <label className="label radioLabel" htmlFor="ed3">Высшее</label>
                     </div>
 
                     <div className="formSection">

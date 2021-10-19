@@ -6,6 +6,7 @@ import { StartPage } from './Components/StartPage';
 import { Education } from './Components/Education';
 import { Contacts } from './Components/Contacts';
 import { ResultPage } from './Components/ResultPage';
+import { Finish } from './Components/Finish';
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
         </Route>
         <Route path="/resultPage">
           <ResultPage />
+        </Route>
+        <Route path="/finish">
+          <Finish />
         </Route>
       </Switch>
     </Router>

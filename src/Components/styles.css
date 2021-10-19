@@ -79,9 +79,12 @@
 }
 
 .centerBut {
+  display: flex;
+  justify-content: center;
   width: 30%;
   margin: 0 auto;
   margin-top: 60px;
+  margin-bottom: 10px;
   background-color: transparent;
 }
 
@@ -124,4 +127,23 @@
 .labelCheckBox {
   background-color: transparent;
   color: rgb(80, 76, 76);
+}
+.page {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+  background-color: transparent;
+}
+.titlePage {
+  font-size: 30px;
+}
+
+.titleStart {
+  /* margin: 0 auto; */
+  text-align: center;
+  font-size: 50px;
+  color: rgb(80, 76, 76);
+  background-color: rgb(185, 223, 245);
 }

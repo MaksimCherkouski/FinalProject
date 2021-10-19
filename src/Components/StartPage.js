@@ -8,9 +8,11 @@ export function StartPage() {
     return (
 
         <div className="container ">
-            <h1 className="title">Заполните анкеты для резюме</h1>
+            <h1 className="titleStart  ">Заполните анкету для резюме</h1>
             <Link to={"/step1"}>
-                <button className="nextBut">Начать</button>
+                <div className="centerBut">
+                    <button className="nextBut">Начать</button>
+                </div>
             </Link>
         </div>
     )
