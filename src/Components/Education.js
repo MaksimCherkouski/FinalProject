@@ -1,72 +1,36 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./styles.css";
+import { checkFilling } from "../utils"
+import { checkEducation } from "../utils"
+
 
 
 export function Education() {
 
-    const [education, setEducation] = useState('secondary');
+    const [education, setEducation] = useState('Среднее');
     const [institution, setInstitution] = useState('');
     const [startEducation, setStartEducation] = useState('2012');
     const [endEducation, setEndEducation] = useState('2015');
     const [russian, setRussian] = useState(false);
     const [english, setEnglish] = useState(false);
     const [german, setGerman] = useState(false);
-    // const [language, setLanguage] = useState('');
-
-
-
-    function checkEducation(str) {
-        if (str === 'secondary') { return 'Среднее' }
-        if (str === 'secondary_special') { return 'Среднее специальное' }
-        if (str === 'higher') { return 'Высшее' }
-    }
-    // function checkLanguage() {
-    //     let res = '';
-    //     if (russian) { res += 'Русский, ' }
-    //     if (english) { res += 'Английский, ' }
-    //     if (german) { res += 'Немецкий, ' }
-    //     return res.substring(0, res.length - 2)
-    // }
 
     const handleChangeState = () => {
-        if (checkFilling) {
-
-            // console.log(checkLanguage())
-            // setLanguage(checkLanguage())
-            // console.log(language)
-
-            sessionStorage.setItem('step2', JSON.stringify({
-                education,
-                institution,
-                startEducation,
-                endEducation,
-                russian,
-                english,
-                german
-            }))
-        }
-
+        sessionStorage.setItem('step2', JSON.stringify({
+            education,
+            institution,
+            startEducation,
+            endEducation,
+            russian,
+            english,
+            german
+        }))
     }
 
     const handleChangeInstitution = (e) => {
         let newValue = e.target.value;
         setInstitution(newValue);
-        checkFilling()
-    }
-
-    // const handleChangeLanguage = () => {
-    //     setLanguage(checkLanguage())
-
-    // }
-
-
-    function checkFilling() {
-        if (institution.length > 0) {
-            return true
-        } else {
-            return false
-        }
     }
 
     return (
@@ -146,7 +110,7 @@ export function Education() {
 
                     <Link to={"/step3"}>
                         <div className="centerBut">
-                            <button className={`${checkFilling() === true ? 'nextBut' : 'nextBut hide'}`}
+                            <button className={`${checkFilling([institution]) === true ? 'nextBut' : 'nextBut hide'}`}
                                 onClick={handleChangeState}>Продолжить</button>
                         </div>
                     </Link>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./styles.css";
-
+import { checkFilling } from "../utils"
 
 export function Contacts() {
 
@@ -9,33 +9,21 @@ export function Contacts() {
     const [email, setEmail] = useState('');
 
     const handleChangeState = () => {
-        if (checkFilling) {
-
-            sessionStorage.setItem('step3', JSON.stringify({
-                phoneNumber,
-                email
-            }))
-        }
+        sessionStorage.setItem('step3', JSON.stringify({
+            phoneNumber,
+            email
+        }))
 
     }
     const handleChangePhoneNumber = (e) => {
         let newValue = e.target.value;
         setPhoneNumber(newValue);
-        checkFilling()
     }
 
     const handleChangeEmail = (e) => {
         let newValue = e.target.value;
         setEmail(newValue);
-        checkFilling()
-    }
 
-    function checkFilling() {
-        if (phoneNumber.length > 0 && email.length > 0) {
-            return true
-        } else {
-            return false
-        }
     }
 
     return (
@@ -62,7 +50,7 @@ export function Contacts() {
 
                     <Link to={"/resultPage"}>
                         <div className="centerBut">
-                            <button className={`${checkFilling() === true ? 'nextBut' : 'nextBut hide'}`}
+                            <button className={`${checkFilling([phoneNumber, email]) === true ? 'nextBut' : 'nextBut hide'}`}
                                 onClick={handleChangeState}>Продолжить</button>
                         </div>
                     </Link>

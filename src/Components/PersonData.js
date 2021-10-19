@@ -1,16 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./styles.css";
+import { checkFilling } from "../utils"
+
 
 
 export function PersonData() {
-    // const [{ secondName, firstName, patronymic, age, city }, setState] = useState({
-    //     secondName: "Second Name",
-    //     firstName: "First Name",
-    //     patronymic: "Patronymic",
-    //     age: 18,
-    //     city: "City"
-    // })
+
     const [secondName, setSecondName] = useState('');
     const [firstName, setFirstName] = useState('');
     const [patronymic, setPatronymic] = useState('');
@@ -19,38 +15,32 @@ export function PersonData() {
 
 
     const handleChangeState = () => {
-        if (checkFilling) {
 
-            sessionStorage.setItem('step1', JSON.stringify({ secondName, firstName, patronymic, age, city }))
-        }
+
+        sessionStorage.setItem('step1', JSON.stringify({ secondName, firstName, patronymic, age, city }))
+
 
     }
 
     const handleChangeSecondName = (e) => {
         let newValue = e.target.value;
         setSecondName(newValue);
-        checkFilling()
+
     }
 
     const handleChangeFirstName = (e) => {
         let newValue = e.target.value;
         setFirstName(newValue);
-        checkFilling()
+
     }
 
     const handleChangeCity = (e) => {
         let newValue = e.target.value;
         setCity(newValue);
-        checkFilling()
+
     }
 
-    function checkFilling() {
-        if (secondName.length > 0 && firstName.length > 0 && city.length > 0) {
-            return true
-        } else {
-            return false
-        }
-    }
+
 
     return (
         <div className="PersonData">
@@ -93,7 +83,7 @@ export function PersonData() {
 
                     <Link to={"/step2"}>
                         <div className="centerBut">
-                            <button className={`${checkFilling() === true ? 'nextBut' : 'nextBut hide'}`}
+                            <button className={`${checkFilling([secondName, firstName, city]) === true ? 'nextBut' : 'nextBut hide'}`}
                                 onClick={handleChangeState}>Продолжить</button>
                         </div>
                     </Link>

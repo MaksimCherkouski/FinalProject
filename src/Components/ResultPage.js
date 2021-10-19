@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./styles.css";
+import { checkLanguage } from "../utils"
 
 
 
@@ -78,15 +79,7 @@ export function ResultPage() {
     }, [])
 
 
-
-    function checkLanguage() {
-        let res = '';
-        if (russian) { res += 'Русский, ' }
-        if (english) { res += 'Английский, ' }
-        if (german) { res += 'Немецкий, ' }
-        return res.substring(0, res.length - 2)
-    }
-    var language = checkLanguage()
+    var language = checkLanguage(russian, english, german)
 
     return (
         <div className="PersonData">
