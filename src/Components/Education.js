@@ -54,7 +54,7 @@ export function Education() {
                     <div className="formSection">
                         <label className="label">Учебное заведение</label>
                         <input type="text" className="input" defaultValue={institution}
-                            onChange={handleChangeInstitution} placeholder='БГУ' />
+                            onChange={handleChangeInstitution} id='institution' placeholder='БГУ' />
                     </div>
 
                     <div className="formSection">
