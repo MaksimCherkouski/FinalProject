@@ -12,26 +12,20 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/">
-          <StartPage />
-        </Route>
-        <Route path="/step1">
-          <PersonData />
-        </Route>
-        <Route path="/step2">
-          <Education />
-        </Route>
-        <Route path="/step3">
-          <Contacts />
-        </Route>
-        <Route path="/resultPage">
-          <ResultPage />
-        </Route>
-        <Route path="/finish">
-          <Finish />
-        </Route>
+        <Route path="/FinalProject" component={StartPage} />
+
+        <Route path="/step1" component={PersonData} />
+
+        <Route path="/step2" component={Education} />
+
+        <Route path="/step3" component={Contacts} />
+
+        <Route path="/resultPage" component={ResultPage} />
+
+        <Route path="/finish" component={Finish} />
+
       </Switch>
-    </Router>
+    </Router >
 
   );
 }
